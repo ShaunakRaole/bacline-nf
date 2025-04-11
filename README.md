@@ -5,7 +5,7 @@
 **Assignment:** Workflow Exercise  
 **Version:** 1.0  
 **Nextflow Version:** v24.10.5  
-**OS/Arch Used:** macOS 14 (Apple Silicon, M1 Pro)  
+**OS/Arch Used:** macOS 14 (Apple Silicon, M2 Pro)  
 **Package Manager:** Conda  
 **Conda Environment File:** `env/bacline.yaml`
 
@@ -54,7 +54,7 @@ cd bacline-nf
 > This environment includes all required tools and Nextflow itself.
 
 ```bash
-conda env create -f bacline.yaml
+CONDA_SUBDIR=osx-64 conda env create -f bacline.yaml
 conda activate bacline
 ```
 
@@ -70,12 +70,12 @@ nextflow run main.nf
 
 ```
 bacline-nf/
-├── bin/                        # Shell scripts
-├── env/                       # Conda env YAML
+├── bin/                      # Shell scripts
+├── bacline.yaml              # Conda env YAML
 ├── data/raw_fastqs/          # Subsampled test data
 ├── main.nf                   # Nextflow DSL2 script
-├── modules/                  # DSL2 module definitions
 ├── results/                  # Published results
+├── resources/                # For future implementation of AMRFinder
 └── README.md
 ```
 
