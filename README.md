@@ -32,6 +32,8 @@ This workflow performs the following:
 
 **Execution Flow:**
 
+
+
 ## 🧪 Test Dataset
 
 Test FASTQ files are provided in `data/raw_fastqs/`. These are **subsetted versions (~40,000 lines)** of:
@@ -45,7 +47,7 @@ Test FASTQ files are provided in `data/raw_fastqs/`. These are **subsetted versi
 ### 1. Clone the Repository
 
 ```bash
-git clone git@github.com:ShaunakRaole/bacline-nf.git
+git clone https://github.com/ShaunakRaole/bacline-nf
 cd bacline-nf
 ```
 
