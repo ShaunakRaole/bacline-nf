@@ -32,3 +32,72 @@ This workflow performs the following:
 
 **Execution Flow:**
 
+## 🧪 Test Dataset
+
+Test FASTQ files are provided in `data/raw_fastqs/`. These are **subsetted versions (~40,000 lines)** of:
+
+- SRR33066375  
+- SRR33066376  
+- SRR33066377
+
+## Usage
+
+### 1. Clone the Repository
+
+```bash
+git clone git@github.com:ShaunakRaole/bacline-nf.git
+cd bacline-nf
+```
+
+### 2. Create and Activate the Conda Environment
+
+> This environment includes all required tools and Nextflow itself.
+
+```bash
+conda env create -f bacline.yaml
+conda activate bacline
+```
+
+### 3. Run the Workflow
+
+> Make sure you are in the root directory (`bacline-nf`) when running this command:
+
+```bash
+nextflow run main.nf
+```
+
+## 📁 Directory Structure
+
+```
+bacline-nf/
+├── bin/                        # Shell scripts
+├── env/                       # Conda env YAML
+├── data/raw_fastqs/          # Subsampled test data
+├── main.nf                   # Nextflow DSL2 script
+├── modules/                  # DSL2 module definitions
+├── results/                  # Published results
+└── README.md
+```
+
+---
+
+## 🔧 Tools Used
+
+| Tool         | Function                  | Source    |
+|--------------|---------------------------|-----------|
+| Trimmomatic  | Adapter/quality trimming  | bioconda  |
+| SKESA        | Genome assembly           | bioconda  |
+| Prodigal     | Gene prediction           | bioconda  |
+| Prokka       | Functional annotation     | bioconda  |
+
+---
+
+## ✅ Features Demonstrated
+
+- ✅ Sequential flow: `trimReads → assembleSkesa → genePredAmr`
+- ✅ Parallel flow: `assembleSkesa → [ genePredAmr + runProkka ]`
+- ✅ Reproducibility using Conda environments
+- ✅ All outputs published to `results/`
+- ✅ Test data and pipeline <30 min runtime
+
+---
