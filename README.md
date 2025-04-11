@@ -7,7 +7,7 @@
 **Nextflow Version:** v24.10.5  
 **OS/Arch Used:** macOS 14 (Apple Silicon, M2 Pro)  
 **Package Manager:** Conda  
-**Conda Environment File:** `env/bacline.yaml`
+**Conda Environment File:** `bacline.yaml`
 
 ---
 
