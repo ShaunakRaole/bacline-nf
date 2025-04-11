@@ -16,6 +16,7 @@ Channel
 // === PROCESS DEFINITIONS ===
 
 process trimReads {
+    publishDir "./results/trimmed_reads", mode: 'copy'
     tag { sample }
     input:
         tuple val(sample), file(read1), file(read2)
@@ -38,8 +39,8 @@ process trimReads {
 }
 
 
-
 process assembleSkesa {
+    publishDir "./results/assemblies", mode: 'copy'
     tag { sample }
     input:
         // Expects tuple containing sample ID and the two FASTQ files from trimReads
@@ -73,6 +74,7 @@ process assembleSkesa {
 
 
 process genePredAmr {
+    publishDir "./results/gene_prediction", mode: 'copy'
     tag { sample }
     input:
         tuple val(sample), file(assembly)
@@ -92,8 +94,8 @@ process genePredAmr {
 
 
 
-
 process runProkka {
+    publishDir "./results/prokka", mode: 'copy'
     tag { sample }
     input:
         tuple val(sample), file(assembly)
@@ -111,7 +113,6 @@ process runProkka {
     cp -r prokka_out ${sample}_prokka
     """
 }
-
 
 
 
