@@ -32,7 +32,7 @@ This workflow performs the following:
 
 **Execution Flow:**
 
-
+(workflow_diagram)[nf-workflow.png]
 
 ## 🧪 Test Dataset
 
