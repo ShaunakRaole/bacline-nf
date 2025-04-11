@@ -11,7 +11,7 @@
 
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 This workflow requires the following:
 
