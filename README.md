@@ -11,6 +11,17 @@
 
 ---
 
+## 📦 Dependencies
+
+This workflow requires the following:
+
+- **Nextflow**: DSL2 compatible.  
+  Version used: `24.10.5`  
+- **Conda**: For environment and tool management - conda 25.1.1 
+- **bash**: Shell execution for wrapper scripts  
+- **Operating System**: Tested on macOS (Apple Silicon)  
+- **Architecture**: `arm64`
+
 ## Objective
 
 To create a portable and reproducible Nextflow workflow that demonstrates:
